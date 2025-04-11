@@ -1,6 +1,5 @@
 name: 'PR Analysis Action'
 description: 'Triggers an AI analysis of pull requests and comments with the results'
-author: 'Your Name'
 
 inputs:
   api-endpoint:
