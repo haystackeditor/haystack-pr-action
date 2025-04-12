@@ -14,6 +14,10 @@ inputs:
     description: 'Maximum number of polling attempts'
     required: false
     default: '60'
+  github-token:
+    description: 'GitHub token for accessing private repositories'
+    required: false
+    default: ${{ github.token }}
 
 runs:
   using: 'composite'
@@ -31,12 +35,20 @@ runs:
         echo "Repository name: $REPO_NAME"
         echo "PR number: $PR_NUMBER"
         
+        # Create the request body with GitHub token
+        REQUEST_BODY=$(jq -n \
+          --arg token "${{ inputs.github-token }}" \
+          '{
+            "aiAnalysisEnabled": true,
+            "oauthToken": $token
+          }')
+        
         # Make the initial API call with explicit error output
         echo "Making API call to: ${{ inputs.api-endpoint }}/${REPO_OWNER}/${REPO_NAME}/pull/${PR_NUMBER}"
         RESPONSE=$(curl -s -X POST \
           "${{ inputs.api-endpoint }}/${REPO_OWNER}/${REPO_NAME}/pull/${PR_NUMBER}" \
           -H "Content-Type: application/json" \
-          -d '{"aiAnalysisEnabled": true}' \
+          -d "$REQUEST_BODY" \
           --fail-with-body || echo '{"error": "API call failed"}')
           
         # Print the full response for debugging
