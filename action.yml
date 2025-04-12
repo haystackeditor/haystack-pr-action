@@ -133,11 +133,11 @@ runs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.issue.number,
-            body: `## 🔍 PR Analysis Complete!
-            
-            Your PR has been analyzed and is available for viewing:
-            
-            **[View Analysis Results](${haystack_url})**
-            
-            This link provides an enhanced view of your PR with additional insights.`
+            body: `## <img src="https://raw.githubusercontent.com/haystackeditor/haystack-pr-action/main/assets/logo.png" width="24" height="24" style="vertical-align: middle;"> **Haystack Code Reviewer: PR Analysis Ready!**
+
+Haystack Code Reviewer has analyzed your PR and organized it into a format that's easy to parse.
+
+**[View PR](${haystack_url})**
+
+This link provides a "walkthrough" and explanation of your PR.`
           })
