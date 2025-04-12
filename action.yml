@@ -1,5 +1,5 @@
 name: 'Haystack Code Reviewer'
-description: 'When a PR is created, Haystack Code Reviewer automatically analyzes and sections the PR, and comments on the PR with a link to an interactive canvas view'
+description: 'Automatically analyzes PRs with AI, and comments on the PR with a link to an interactive canvas view'
 
 inputs:
   api-endpoint:
