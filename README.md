@@ -1,20 +1,19 @@
-# PR Analysis Action
+# Haystack Code Reviewer
 
-This GitHub Action automatically analyzes pull requests and provides an enhanced view through the Haystack service.
+Haystack Code Reviewer automatically analyzes and segments pull requests, and creates a nice canvas view you can use to take a "guided tour" of the PR. This action will automatically trigger Haystack Code Reviewer for all new PRs in your repo, and comment the appropriate link on that PR.
 
 ## Features
 
-- Triggers AI-powered analysis when PRs are opened or updated
-- Polls for completion status
-- Automatically comments on the PR with results link
-- Configurable API endpoints and polling settings
+- Creates an AI-powered "guided tour" on an infinite canvas whenever PRs are opened or updated
+- Automatically comments on the PR with link
+- Configurable polling settings
 
 ## Usage
 
-Create a `.github/workflows/pr-analysis.yml` file in your repository:
+Create a `.github/workflows/haystack-code-reviewer.yml` file in your repository:
 
 ```yaml
-name: PR Analysis
+name: Haystack Code Reviewer
 
 on:
   pull_request:
@@ -28,7 +27,7 @@ jobs:
   analyze-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: your-username/pr-analysis-action@v1
+      - uses: your-username/haystack-pr-action@v1
 ```
 
 ## Configuration
