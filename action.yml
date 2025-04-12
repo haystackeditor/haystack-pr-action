@@ -1,5 +1,8 @@
 name: 'Haystack Code Reviewer'
 description: 'Automatically analyzes PRs with AI, and comments on the PR with a link to an interactive canvas view'
+branding:
+  icon: 'git-pull-request'  # Choose an icon from the available options
+  color: 'purple'        # Choose a color
 
 inputs:
   api-endpoint:
