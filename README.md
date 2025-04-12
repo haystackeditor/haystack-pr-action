@@ -27,7 +27,7 @@ jobs:
   analyze-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: your-username/haystack-pr-action@v1
+      - uses: haystackeditor/haystack-pr-action@v1
 ```
 
 ## Configuration
